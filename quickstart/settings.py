@@ -25,7 +25,7 @@ SECRET_KEY = '#m2w-21@6%3n14^a)803(1^gx%9)!#zg(8k@4dwco+bdxp2^+7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','peaceful-river-44610.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','aqueous-fjord-86112.herokuapp.com']
 
 
 # Application definition
