@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <!--Hi {{ user.username }}!-->
+    <img src="{% static 'images/hi.gif' %}" align="right"></img>
+    <!--<a href="{% url 'post_list' %}"><h2>Blog</h2></a>-->
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}
