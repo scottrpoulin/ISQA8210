@@ -4,12 +4,67 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+    <!--<p>{{checkTemp|yesno}}</p>-->
+    <!--<p>{{ temp|yesno:"Agree,Disagree" }}</p>-->
   <!--Hi {{ user.username }}!-->
-    <img src="{% static 'images/hi.gif' %}" align="right"></img>
-    <!--<a href="{% url 'post_list' %}"><h2>Blog</h2></a>-->
+    <!--<p>{{ user.last_login }}</p>-->
+    <!--<img src="{% static 'images/hi.gif' %}" align="right"></img>-->
+           <div class="content container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="links">
+                            <!-- Example row of columns -->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static 'images/hi.gif' %}"/>
+                                        <div class="caption">
+                                            <h2>Blog</h2>
+                                            <p>Assignment 1 Part 1</p>
+                                            <p><a class="btn btn-primary" href="blog/posts"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static 'images/lunch.jpeg' %}" alt="CRM"/>
+                                        <div class="caption">
+                                            <h2>CRM</h2>
+                                            <p>Assignment 1 Part 2</p>
+                                            <p><a class="btn btn-primary" href="crm/home"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static 'images/snek2.gif' %}" alt="Extra"/>
+                                        <div class="caption">
+                                            <h2>Extras</h2>
+                                            <p>Snake Game</p>
+                                            <p><a class="btn btn-primary" href="snek/home"
+                                                  role="button">View
+                                                details &raquo;</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-  <img src="{% static 'images/seeya.gif' %}" align="right"></img>
+    {% if checkTemp|yesno == "no" %}
+        <!--<p>{{ user.last_login }}</p>-->
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">login</a>
+        <img src="{% static 'images/hi.gif' %}" align="right"></img>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
 {% endif %}
 {% endblock %}

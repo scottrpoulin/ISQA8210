@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Logged Out{% endblock %}
+
+{% block content %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+  <img src="{% static 'images/seeya.gif' %}" align="right"></img>
+{% endblock %}
