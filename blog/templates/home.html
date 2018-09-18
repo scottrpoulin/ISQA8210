@@ -60,11 +60,13 @@
     {% if checkTemp|yesno == "no" %}
         <!--<p>{{ user.last_login }}</p>-->
         <p>You are not logged in</p>
-        <a href="{% url 'login' %}">login</a>
+        <p><a href="{% url 'login' %}">Login Here</a></p>
+        <p><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
         <img src="{% static 'images/hi.gif' %}" align="right"></img>
     {% else %}
         <p>You are not logged in</p>
-        <a href="{% url 'login' %}">login</a>
+        <p><a href="{% url 'login' %}">Login Here</a></p>
+        <p><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
     {% endif %}
 {% endif %}
 {% endblock %}
